@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://nmk14q16xsu"]
+
+[ext_resource type="Script" path="res://scripts/character/character.gd" id="1_7vu30"]
+[ext_resource type="PackedScene" uid="uid://cnbcqc03ki5t5" path="res://scenes/characters/abilities/dash.tscn" id="2_rwtet"]
+[ext_resource type="AudioStream" uid="uid://dxmnvvtmyeuo2" path="res://audio/sounds/jump.ogg" id="3_1tsr0"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 1
+scale = Vector2(2, 2)
+script = ExtResource("1_7vu30")
+JUMP_VELOCITY = 800.0
+CAN_FLY = false
+
+[node name="Dash" parent="." instance=ExtResource("2_rwtet")]
+visible = false
+z_index = 1
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1tsr0")
+volume_db = -9.0
+pitch_scale = 0.5
+
+[connection signal="body_entered" from="Dash" to="." method="_on_dash_body_entered"]

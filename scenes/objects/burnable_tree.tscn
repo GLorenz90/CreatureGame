@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6n60885gqcon"]
+
+[ext_resource type="Texture2D" uid="uid://duabyudujvuxe" path="res://images/other/treeDead.png" id="1_fckbj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1c6fx"]
+size = Vector2(57.875, 248)
+
+[node name="BurnableTree" type="StaticBody2D" groups=["burnable"]]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-10, 0)
+texture = ExtResource("1_fckbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1c6fx")

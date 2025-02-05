@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnbcqc03ki5t5"]
+
+[ext_resource type="Texture2D" uid="uid://bse7qwj5p1slg" path="res://images/other/Dash.png" id="2_x3nn5"]
+[ext_resource type="AudioStream" uid="uid://b2s0e1rkmuw83" path="res://audio/sounds/dash.ogg" id="3_hsc5y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pew0q"]
+size = Vector2(35, 68)
+
+[node name="Dash" type="Area2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(13.5, 0)
+texture = ExtResource("2_x3nn5")
+
+[node name="Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hsc5y")
+volume_db = -10.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(46.5, 0)
+shape = SubResource("RectangleShape2D_pew0q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

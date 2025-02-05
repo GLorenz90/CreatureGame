@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1mb685sin48i"]
+
+[ext_resource type="Script" path="res://scripts/character/abilities/emote.gd" id="1_qin5b"]
+[ext_resource type="Texture2D" uid="uid://c5b8yqu5pyyfk" path="res://images/other/emote_faceHappy.png" id="2_v75u6"]
+[ext_resource type="AudioStream" uid="uid://c2jay872xcqyq" path="res://audio/sounds/happy2.ogg" id="3_bmik4"]
+
+[node name="Emote" type="Node2D"]
+script = ExtResource("1_qin5b")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_v75u6")
+
+[node name="Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bmik4")
+volume_db = -10.0
+autoplay = true

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b8ds77xhxe1dn"]
+
+[node name="MainMenu" type="VBoxContainer"]
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Continue"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+text = "New Game"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 2
+text = "Options"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 2
+text = "Quit"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt51t8q8isce7"]
+
+[ext_resource type="Script" path="res://scripts/character/camera_target.gd" id="1_7gyrv"]
+[ext_resource type="Texture2D" uid="uid://cq4ovn0lxdd8a" path="res://images/backgrounds/curtain.png" id="2_t3t48"]
+
+[node name="CameraTarget" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_7gyrv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Curtain" type="Sprite2D" parent="."]
+visible = false
+z_index = 1000
+z_as_relative = false
+texture = ExtResource("2_t3t48")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdh7i3nljiex3"]
+
+[ext_resource type="PackedScene" uid="uid://nmk14q16xsu" path="res://scenes/characters/character.tscn" id="1_qmji4"]
+[ext_resource type="Texture2D" uid="uid://de4gw5vdn5div" path="res://images/animals/icons8-hummingbird-100.png" id="3_5didq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dbtn4"]
+radius = 22.0
+
+[node name="CharBird" type="Node2D" groups=["player"]]
+
+[node name="Body" parent="." instance=ExtResource("1_qmji4")]
+motion_mode = 1
+SPEED = 600.0
+JUMP_VELOCITY = 400.0
+CAN_FLY = true
+ABILITY_1 = 1
+
+[node name="Sprite" type="Sprite2D" parent="Body"]
+texture = ExtResource("3_5didq")
+
+[node name="Collision" type="CollisionShape2D" parent="Body"]
+shape = SubResource("CircleShape2D_dbtn4")

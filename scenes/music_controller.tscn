@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkiufptuj3x3a"]
+
+[ext_resource type="AudioStream" uid="uid://c2jif3h7q8qdk" path="res://audio/music/CuriousCritters.mp3" id="1_4f5uw"]
+
+[node name="MusicController" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_4f5uw")
+volume_db = -20.0
+autoplay = true

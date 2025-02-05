@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0d6ito61iykv"]
+
+[ext_resource type="Texture2D" uid="uid://c4r58aiybonac" path="res://images/other/brickGrey.png" id="1_53t4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c81y"]
+size = Vector2(128, 128)
+
+[node name="BreakableRock" type="StaticBody2D" groups=["breakable"]]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_53t4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-6.35783e-07, 0)
+shape = SubResource("RectangleShape2D_3c81y")
