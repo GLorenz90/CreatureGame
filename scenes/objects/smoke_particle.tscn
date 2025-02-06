@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://m5rc17gtvco1"]
+
+[ext_resource type="Script" path="res://scenes/objects/smoke_particle.gd" id="1_srx7y"]
+[ext_resource type="Texture2D" uid="uid://bnd4oisbwovdd" path="res://images/sprites/ui/button_round_gradient.png" id="2_dsewb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5guvl"]
+size = Vector2(32, 26)
+
+[node name="smoke_particle" type="RigidBody2D"]
+modulate = Color(1, 1, 1, 0.498039)
+z_index = 1
+gravity_scale = 0.0
+linear_damp = 1.0
+script = ExtResource("1_srx7y")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5guvl")
+disabled = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dsewb")

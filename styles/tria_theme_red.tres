@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dqd46tk5x8rai"]
+
+[ext_resource type="FontFile" uid="uid://3f3nok38ndds" path="res://images/MADE Tommy Soft Medium PERSONAL USE.otf" id="1_60iq1"]
+[ext_resource type="StyleBox" uid="uid://b5e1xvg0pnil7" path="res://styles/btn_disabled.tres" id="2_1w4q2"]
+[ext_resource type="StyleBox" uid="uid://cggps54uq41rg" path="res://styles/btn_hov_red.tres" id="3_bi8dn"]
+[ext_resource type="StyleBox" uid="uid://yukg0bx3yobt" path="res://styles/btn_norm_red.tres" id="4_4kwu8"]
+[ext_resource type="StyleBox" uid="uid://ea4jlgvjropb" path="res://styles/btn_pres_red.tres" id="5_5c2nt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcpk7"]
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_60iq1")
+Button/styles/disabled = ExtResource("2_1w4q2")
+Button/styles/focus = SubResource("StyleBoxEmpty_jcpk7")
+Button/styles/hover = ExtResource("3_bi8dn")
+Button/styles/normal = ExtResource("4_4kwu8")
+Button/styles/pressed = ExtResource("5_5c2nt")

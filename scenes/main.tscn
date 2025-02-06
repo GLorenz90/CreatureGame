@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4gghms67sutt"]
+[gd_scene load_steps=7 format=3 uid="uid://b4gghms67sutt"]
 
-[ext_resource type="Script" path="res://scripts/src/main.gd" id="1_qf5rn"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_qf5rn"]
+[ext_resource type="AudioStream" uid="uid://c2jif3h7q8qdk" path="res://audio/music/CuriousCritters.mp3" id="2_57n0t"]
+[ext_resource type="PackedScene" uid="uid://dt51t8q8isce7" path="res://scenes/camera_target.tscn" id="3_qtaqp"]
+[ext_resource type="AudioStream" uid="uid://5tpnfvpa78pm" path="res://audio/sounds/switch28.ogg" id="3_xwv7v"]
+[ext_resource type="PackedScene" uid="uid://b8ds77xhxe1dn" path="res://scenes/menus/main_menu.tscn" id="4_88hd3"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mcoq3"]
+random_pitch = 1.15
+streams_count = 1
+stream_0/stream = ExtResource("3_xwv7v")
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_qf5rn")
+
+[node name="SceneParent" type="Node2D" parent="."]
+
+[node name="MainMenu" parent="SceneParent" instance=ExtResource("4_88hd3")]
+
+[node name="Globals" type="Node2D" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Globals"]
+stream = ExtResource("2_57n0t")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Globals"]
+stream = SubResource("AudioStreamRandomizer_mcoq3")
+
+[node name="CameraTarget" parent="." instance=ExtResource("3_qtaqp")]
+
+[connection signal="finished" from="Globals/Music" to="." method="_on_audio_stream_player_finished"]
+[connection signal="finished" from="Globals/ClickSound" to="." method="_on_audio_stream_player_finished"]

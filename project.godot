@@ -11,18 +11,26 @@ config_version=5
 [application]
 
 config/name="Harley's Farm"
-run/main_scene="res://scenes/levels/world_1.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://images/animals/icons8-kawaii-dinosaur-100.png"
+config/windows_native_icon="res://images/logo.ico"
 
 [autoload]
 
-Global="*res://scripts/src/global.gd"
+Global="*res://scripts/global.gd"
+Signals="*res://scripts/signals.gd"
+
+[debug]
+
+gdscript/warnings/unassigned_variable=0
+gdscript/warnings/unused_signal=0
+gdscript/warnings/shadowed_variable=0
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1600
+window/size/viewport_height=900
 window/stretch/mode="viewport"
 
 [input]

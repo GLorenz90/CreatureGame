@@ -24,18 +24,16 @@ const fireball := preload("res://scenes/characters/abilities/fireball.tscn");
 var is_busy := false;
 var is_charging := false;
 
-func stop_all_abilities():
-  stop_charge();
-#end stop_all_abilities();
-
 #timers
 var busy_time = MAX_BUSY_TIME;
 var coyote_time = MAX_COYOTE_TIME;
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity");
 
 func _ready():
+  print("character _ready")
+  Signals.character_set.emit(self);
   stop_all_abilities();
 #end _ready
 
@@ -51,6 +49,10 @@ func _process(delta):
   move_and_slide();
 #end _physics_process
   
+func stop_all_abilities():
+  stop_charge();
+#end stop_all_abilities();
+
 func get_inputs():
   h_input = Input.get_axis("char_move_left","char_move_right");
   v_input = Input.get_axis("char_move_up", "char_move_down") if CAN_FLY else 0.0;
