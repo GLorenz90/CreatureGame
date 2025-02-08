@@ -14,8 +14,8 @@ const char_elephant = preload("res://scenes/characters/char_elephant.tscn");
 
 const CHARACTERS = [
   char_dino,
-  char_elephant,
-  char_bird
+  char_elephant
+  #char_bird
 ];
 
 enum ABILITIES {

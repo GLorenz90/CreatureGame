@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0d6ito61iykv"]
+[gd_scene load_steps=4 format=3 uid="uid://d0d6ito61iykv"]
 
 [ext_resource type="Texture2D" uid="uid://c4r58aiybonac" path="res://images/other/brickGrey.png" id="1_53t4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c81y"]
 size = Vector2(128, 128)
+
+[sub_resource type="Gradient" id="Gradient_7fo5j"]
+offsets = PackedFloat32Array(0, 0.633333, 0.986667)
+colors = PackedColorArray(0.803922, 0.847059, 0.847059, 1, 0.631373, 0.694118, 0.694118, 1, 0.6279, 0.69, 0.69, 0)
 
 [node name="BreakableRock" type="StaticBody2D" groups=["breakable"]]
 scale = Vector2(2, 2)
@@ -15,3 +19,24 @@ texture = ExtResource("1_53t4n")
 visible = false
 position = Vector2(-6.35783e-07, 0)
 shape = SubResource("RectangleShape2D_3c81y")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(64, 64)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+linear_accel_min = -100.0
+linear_accel_max = -100.0
+damping_min = 100.0
+damping_max = 100.0
+angle_max = 360.0
+scale_amount_min = 25.0
+scale_amount_max = 50.0
+color_ramp = SubResource("Gradient_7fo5j")

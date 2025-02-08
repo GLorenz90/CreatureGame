@@ -48,7 +48,20 @@ func _process(delta):
 
   move_and_slide();
 #end _physics_process
+
+# TODO: Should be on the breakable, but needs velocity to change here, possibly use a simple signal.
+func _on_dash_body_entered(body: Node2D): #for some reason this triggers even if collision is disabled, after enabling it
+  if(body.is_in_group("breakable") && !$Dash/Collision.disabled):
+    var particles: CPUParticles2D = body.find_child("Particles");
+    if particles != null:
+      particles.emitting = true;
+    body.queue_free();
+    velocity.x /= 2;
+    end_busy();
+  #end if
+#end _on_dash_body_entered
   
+#region FUNCTIONS ==================================================================================
 func stop_all_abilities():
   stop_charge();
 #end stop_all_abilities();
@@ -184,12 +197,4 @@ func stop_charge():
   $Dash.visible = false;
   is_charging = false;
 #end stop_charge
-
-
-func _on_dash_body_entered(body): #for some reason this triggers even if collision is disabled, after enabling it
-  if(body.is_in_group("breakable") && !$Dash/Collision.disabled):
-    body.queue_free();
-    velocity.x /= 2;
-    end_busy();
-  #end if
-#end _on_dash_body_entered
+#endregion
