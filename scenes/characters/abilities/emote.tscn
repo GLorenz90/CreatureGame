@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1mb685sin48i"]
 
-[ext_resource type="Script" path="res://scripts/character/abilities/emote.gd" id="1_qin5b"]
+[ext_resource type="Script" path="res://scenes/characters/abilities/emote.gd" id="1_qin5b"]
 [ext_resource type="Texture2D" uid="uid://c5b8yqu5pyyfk" path="res://images/other/emote_faceHappy.png" id="2_v75u6"]
 [ext_resource type="AudioStream" uid="uid://c2jay872xcqyq" path="res://audio/sounds/happy2.ogg" id="3_bmik4"]
 

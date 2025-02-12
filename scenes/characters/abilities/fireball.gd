@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var MAX_LIVE_TIME := .75;
-@export var MOVE_SPEED := 100.0;
+@export var MOVE_SPEED := 150.0;
 @export var AMPLITUDE := 70.0;
 @export var FREQUENCY := 15.0;
 
@@ -16,7 +16,6 @@ func _ready():
   timing_offset = deg_to_rad(randf_range(0.0, 360.0));
   starting_y = position.y;
   rotation_degrees = randf_range(0.0, 360.0);
-  MOVE_SPEED *= randf_range(.75, 1.0);
 #end _ready
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

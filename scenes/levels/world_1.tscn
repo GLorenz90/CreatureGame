@@ -164,8 +164,7 @@ position = Vector2(1418, 1258)
 scale = Vector2(2.48, 2.32)
 
 [node name="BreakableRock6" parent="Destructables" instance=ExtResource("8_ebpbg")]
-position = Vector2(727, 1546)
-scale = Vector2(3.2, 2.32)
+position = Vector2(1281, 1838)
 
 [node name="BreakableRock4" parent="Destructables" instance=ExtResource("8_ebpbg")]
 position = Vector2(4895, 1181)

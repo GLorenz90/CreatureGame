@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://nmk14q16xsu"]
 
-[ext_resource type="Script" path="res://scripts/character/character.gd" id="1_7vu30"]
+[ext_resource type="Script" path="res://scenes/characters/character.gd" id="1_7vu30"]
 [ext_resource type="PackedScene" uid="uid://cnbcqc03ki5t5" path="res://scenes/characters/abilities/dash.tscn" id="2_rwtet"]
 [ext_resource type="AudioStream" uid="uid://dxmnvvtmyeuo2" path="res://audio/sounds/jump.ogg" id="3_1tsr0"]
 

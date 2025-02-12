@@ -19,9 +19,11 @@ script = ExtResource("1_qf5rn")
 [node name="MainMenu" parent="SceneParent" instance=ExtResource("4_88hd3")]
 
 [node name="Globals" type="Node2D" parent="."]
+process_mode = 3
 
 [node name="Music" type="AudioStreamPlayer" parent="Globals"]
 stream = ExtResource("2_57n0t")
+volume_db = -10.0
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="Globals"]
 stream = SubResource("AudioStreamRandomizer_mcoq3")
